@@ -3,14 +3,15 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CountFuntion from '../CountFunction/CountFunction';
 //import { useState } from 'React' ;
+import { Link } from 'react-router-dom';
 
 
-const Item = ({...products}) => {
+const Item = ({...productos}) => {
 
-    //const[setMensaje] = useState(false)
-    const { name, img, stock, description} = products
+   
+    const { name, img, stock, description, id} = productos
 
-    //const onAdd = (cantidad) => {setMensaje (`Agregaste ${cantidad} productos`) }
+    
 
   return (
     <>
@@ -20,8 +21,7 @@ const Item = ({...products}) => {
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>{description}</Card.Text>
-        {/*<CountFuntion initial={1} stock={stock} />*/}
-        <Button variant="dark">ver mas</Button>
+        <Link to={`/item/${id}`}> Ver Detalles </Link>
       </Card.Body>
     </Card>
     </div>
